@@ -1,0 +1,5 @@
+[26-Aug-2022 23:00:09 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 for query SELECT * FROM 
+[06-Sep-2022 20:58:09 Asia/Kolkata] PHP Warning:  define() expects at least 2 parameters, 1 given in /home/simplejb/financemytrip.com/wp-content/plugins/flight-funders/flight-funders.php on line 48
+[08-Nov-2022 16:38:51 Asia/Kolkata] PHP Warning:  define() expects at least 2 parameters, 1 given in /home/simplejb/cbd.golfclubsbag.com/wp-content/plugins/project-funders-v1.1/flight-funders.php on line 81
+[08-Nov-2022 16:42:47 Asia/Kolkata] PHP Warning:  define() expects at least 2 parameters, 1 given in /home/simplejb/cbd.golfclubsbag.com/wp-content/plugins/project-funders-v1.1/flight-funders.php on line 81
+[08-Nov-2022 18:38:31 Asia/Kolkata] PHP Warning:  define() expects at least 2 parameters, 1 given in /home/simplejb/cbd.golfclubsbag.com/wp-content/plugins/project-funders-v1.1/flight-funders.php on line 81

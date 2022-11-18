@@ -1,0 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins");
+
+.flight--container {
+    font-family: Poppins;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.flight--child {
+    background-color: #F2F2F2;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 10px;
+    width: 95%;
+    margin: auto;
+    position: relative;
+}
+
+.flight--child:before {
+    content: "";
+    height: 15px;
+    width: 15px;
+    background-color: #fff;
+    border-radius: 100px;
+    position: absolute;
+    left: -8px;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+
+.flight--child:after {
+    content: "";
+    height: 15px;
+    width: 15px;
+    background-color: #fff;
+    border-radius: 100px;
+    position: absolute;
+    right: -8px;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+.flight--child p {
+    margin: 0;
+}
+
+.flight--title p {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.flight--details {
+    display: grid;
+    grid-template-columns: repeat(4, 1FR)
+}
+
+.flight--details div p:first-child {
+    font-size: 12px;
+    font-weight: 400;
+    color: #616161;
+}
+
+.flight--details div p:last-child {
+    font-size: 14px;
+    font-weight: 600;
+    color: #000;
+}
