@@ -1,6 +1,6 @@
 <?php
-require_once(WP_SITE_ROOT . "/wp-load.php");
-require_once(WP_SITE_ROOT . "/wp-content/plugins/project-funders/assets/smtp/PHPMailerAutoload.php");
+require_once($_SERVER["DOCUMENT_ROOT"] . "/wp-load.php");
+require_once($_SERVER["DOCUMENT_ROOT"] . "/wp-content/plugins/project-funders/assets/smtp/PHPMailerAutoload.php");
 global $wpdb;
 
 $settingsTable = $wpdb->prefix . "flight_funders_settings";

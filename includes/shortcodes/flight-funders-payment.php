@@ -1,6 +1,6 @@
 <?php
-require_once(WP_SITE_ROOT . "/wp-load.php");
-require_once(WP_SITE_ROOT . '/wp-admin/includes/upgrade.php');
+require_once($_SERVER["DOCUMENT_ROOT"] . "/wp-load.php");
+require_once($_SERVER["DOCUMENT_ROOT"] . '/wp-admin/includes/upgrade.php');
 function payment_execute()
 {
     if (is_admin()) {

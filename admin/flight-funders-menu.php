@@ -1,8 +1,8 @@
 <?php
 
-require_once WP_SITE_ROOT . "/wp-config.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/wp-config.php";
 
-require_once WP_SITE_ROOT . "/wp-load.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/wp-load.php";
 
 /* Creating Flight Funders menu, submenus & pages in WordPress admin panel sidebar */
 
@@ -422,7 +422,6 @@ function project_funders_project_manager()
 			<p class="fully-funded-projects">Fully Funded(<?php echo count(
        $fullyFundedFlights
    ); ?>)</p>
-			<p class="archived-projects">Archived(#)</p>
 			<p class="completed-projects">Completed(<?php echo count(
        $completedFlights
    ); ?>)</p>
@@ -2342,15 +2341,12 @@ function project_funders_settings()
 			<p>
 				<span class="note">Note:</span> Only one system can be used at a time.
 			</p>
-			<div class="paypal-method" style="height: 100%;overflow-y: scroll;padding: 10px;">
-				<h2 style="font-weight:bold;">Paypal</h2>
-				<input type="checkbox" id="pay" name="pay" value="pay">
-  				<label for="payment"> Use Paypal to Receive Payments</label><br>				
-  				<p>Select whether your PayPal account is in Sandbox (Testing) or Live mode.</p> 
-				<p>Live mode is required to successfully process real-world credit cart payments.</p>
+			<div class="paypal-method">
+				<p>Paypal</p>
+				<p>Select whether your PayPal account is in Sandbox (Testing) or Live mode. Live mode is required to successfully process real-world credit cart payments.</p>
 				<div class="paypal-gateway">
 					<div>
-						<p style="font-weight:bold;">Mode:</p>
+						<p>Mode:</p>
 						<select name="paypal_sandbox_status">
 							<option value="false" <?php if ($paypalSandboxStatus === "false") {
            echo "selected";
@@ -2361,7 +2357,7 @@ function project_funders_settings()
 						</select>
 					</div>
 					<div>
-						<p style="font-weight:bold;">Currency:</p>
+						<p>Currency:</p>
 						<select name="currency"> 
 						<option value="CAD" 
 							<?php 
@@ -2391,8 +2387,7 @@ function project_funders_settings()
 					</div>
 				</div>
 				<p>Enter your Sandbox and Live API Credentials.</p>
-				<p> Need help setting these up? Visit <a style="font-weight:bold;" href="https://paypal.com/commercesetup/APICredentials/" target="_blank" style="text-decoration: none;">www.paypal.com/commercesetup/APICredentials</a></p>
-
+				<p> Need help setting these up? Visit <a href="https://www.paypal.com/commercesetup/APICredentials" target="_blank" style="text-decoration: none;">www.paypal.com/commercesetup/APICredentials</a></p>
 				<div class="paypal-credentials">
 					<div>
 						<p style="font-weight: 600;">Sandbox/Live API Credentials</p>
@@ -2407,7 +2402,7 @@ function project_funders_settings()
 			</div>
 
 
-			<button class="payment-settings-update" style="margin-left: auto; display: flex; align-items: center; justify-content: center; margin-top: 10px; height: 40px; width: 150px; border: none; border-radius: 5px; background-color: #4d0071;; color: #ffffff; cursor: pointer;">Update Settings</button>
+			<button class="payment-settings-update" style="margin-left: auto; display: flex; align-items: center; justify-content: center; margin-top: 10px; height: 40px; width: 150px; border: none; border-radius: 5px; background-color: #4D0071; color: #ffffff; cursor: pointer;">Update Settings</button>
 
 
 		</div>

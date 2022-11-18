@@ -2,23 +2,23 @@
 
 /*
 Plugin Name:       Project Funders
-Plugin URI:        https://www.mafc.org/
+Plugin URI:        https://devfizz,com
 Description:       Donation plugin for Non Profit Organisations to pay and request for flights under natural calamities.
 Version:           1.0
 Requires at least: 5.2
 Requires PHP:      7.2
-Author:            MAF
-Author URI:        www.mafc.org
+Author:            Devfizz
+Author URI:        https://devfizz.com/
 License:           GPL v2 or later
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain:       project-funders
 Project Funders is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 2 of the License, or any later versi
 Project Funders is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with Project Funders. If not, see {URI to Plugin Licens
 */
-define('WP_SITE_ROOT', substr(ABSPATH, 0, -1));
-require_once WP_SITE_ROOT . "/wp-load.php";
 
-require_once WP_SITE_ROOT . "/wp-admin/includes/upgrade.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/wp-load.php";
+
+require_once $_SERVER["DOCUMENT_ROOT"] . "/wp-admin/includes/upgrade.php";
 
 foreach (glob(__DIR__ . "/includes/shortcodes/*.php") as $shortcodes) {
     require_once $shortcodes;
@@ -37,7 +37,7 @@ add_action("admin_head", "header_scripts");
 
 /* Defining Constants */
 
-if (!defined("PLUGIN_DIR")) {
+if (!define("PLUGIN_DIR")) {
     $plugin_directory = plugin_dir_url(__FILE__);
 
     define("PLUGIN_DIR", $plugin_directory);
@@ -110,7 +110,7 @@ function project_funders_activated()
             donator_mobile VARCHAR(250) NOT NULL,
             donator_prayer_message VARCHAR(250) NOT NULL 
         )",
-          "flight_funders_notifications" => "CREATE TABLE $notificationsTable(
+        "flight_funders_notifications" => "CREATE TABLE $notificationsTable(
             id INT(50) PRIMARY KEY NOT NULL AUTO_INCREMENT,
             flight_title VARCHAR(250) NOT NULL,
             notification_subject VARCHAR(250) NOT NULL,
@@ -158,7 +158,7 @@ function project_funders_activated()
             wp_insert_post($page);
         }
     }
-    
+
     /* Inserting demo flight in database once plugin gets activated */
 
     $demoFlightTimeline = date("F d, Y h:i A", strtotime("+5 hours"));

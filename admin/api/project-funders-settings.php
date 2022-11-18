@@ -1,5 +1,5 @@
 <?php
-require_once(WP_SITE_ROOT . "/wp-load.php");
+require_once($_SERVER["DOCUMENT_ROOT"] . "/wp-load.php");
 global $wpdb;
 $settingsTable = $wpdb->prefix . "flight_funders_settings";
 $updationStatus = 0;

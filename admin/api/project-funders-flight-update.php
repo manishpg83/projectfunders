@@ -1,5 +1,5 @@
 <?php
-require_once(WP_SITE_ROOT . "/wp-load.php");
+require_once($_SERVER["DOCUMENT_ROOT"] . "/wp-load.php");
 global $wpdb;
 $flightsTable = $wpdb->prefix . "flight_funders_flights";
 $flighID = $_POST["flight_id"];
@@ -8,17 +8,19 @@ $getFlight = $wpdb->get_results(
 )[0];
 
 if(isset($_FILES["flight_image"]) && $_FILES["flight_image"]["name"] != ""){
-$uploadDir = wp_upload_dir()["path"];
-$flightImage = $_FILES["flight_image"]["name"];
-$flightUpload = $uploadDir . "/" . basename($flightImage);
-move_uploaded_file($_FILES["tmp_name"],$flightUpload);
-$flightImageArgs = [
-    "post_mime_type" => $_FILES["flight_image"]["type"],
-    "post_title" => $_FILES["flight_image"]["name"],
-    "post_status" => "inherit"
+$upload_dir = wp_upload_dir()["path"];
+            $flightImageName = $_FILES["flight_image"]["name"];
+            $flightUploadedImage = $upload_dir . "/" . basename($flightImageName);
+            $flightTmpImage = $_FILES["flight_image"]["tmp_name"];
+            move_uploaded_file($flightTmpImage,$flightUploadedImage);
+            $addAttachment = [
+        "post_mime_type" => $_FILES["flight_image"]["type"],
+        "post_title" => $_FILES["flight_image"]["name"],
+        "post_status" => "publish"
 ];
-$flightImageAttachment = wp_insert_attachment($flightImageArgs,$flightUpload);
-$flightImageAttachmentUrl = wp_get_attachment_url($flightImageAttachment);
+    $createAttachment = wp_insert_attachment($addAttachment, $flightUploadedImage);
+    $flightImageAttachmentUrl = wp_get_attachment_url($createAttachment);
+
 }
 else {
     $flightImageAttachmentUrl = $getFlight->flight_image;
