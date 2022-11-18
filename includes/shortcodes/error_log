@@ -1,0 +1,5 @@
+[13-Sep-2022 17:11:11 Europe/Berlin] PHP Notice:  Undefined index: flight_image in /home/simplejb/financemytrip.com/wp-content/plugins/flight-funders/includes/shortcodes/flight-funders-request-flight.php on line 13
+[13-Sep-2022 17:12:29 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to undefined function add_shortcode() in /home/simplejb/financemytrip.com/wp-content/plugins/flight-funders/includes/shortcodes/flight-funders-request-flight.php:201
+Stack trace:
+#0 {main}
+  thrown in /home/simplejb/financemytrip.com/wp-content/plugins/flight-funders/includes/shortcodes/flight-funders-request-flight.php on line 201

@@ -1,0 +1,1 @@
+[28-Aug-2022 13:51:33 UTC] WordPress database error Table 'simplejb_wp776.flight_funders_settings' doesn't exist for query SELECT * FROM flight_funders_settings
